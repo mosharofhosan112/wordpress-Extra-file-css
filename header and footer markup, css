@@ -1,0 +1,113 @@
+   ///header markup///
+   
+   <header id="masthead" class="site-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-auto">
+					<div class="logo">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<?php 
+							$logo_img_id = get_theme_mod( 'custom_logo' );
+							if(!empty($logo_img_id)) : the_custom_logo(); else : ?>
+							<h2><?php bloginfo( 'name' ); ?></h2>
+						<?php endif; ?>
+						</a>
+					</div>
+				</div>
+				<div class="col">
+					<div class="mainmenu">
+						<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id'        => 'primary-menu',
+						) );
+						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header><!-- #masthead -->
+
+//footer markup///
+
+  	<footer id="colophon" class="site-footer">
+		<div class="container">
+			<?php if(is_active_sidebar( 'footer' )) : ?>
+			<div class="row">
+				<?php dynamic_sidebar( 'footer' ); ?>
+			</div>
+			<?php endif; ?>
+			<div class="row">
+				<div class="col">
+					<div class="footer-bottom-area">
+						<div class="row">
+							<div class="col">
+						 
+						 
+				                 </div>
+				              <div class="col">
+					       <div class="social-links">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+</footer><!-- #colophon -->
+
+
+
+/// header css
+
+
+body {
+    font-size: 15px;
+    color: #777777;
+}
+
+.aligncenter{display: block;margin: 0 auto;}
+.alignleft{float: left;margin-right: 15px;}
+.alignright{float: right;margin-left: 15px;}
+
+h1, h2, h3, h4, h5, h6{color: #777777;font-weight: 600}
+
+
+
+h1, .h1{font-size: 50px}
+h2, .h2{font-size: 30px}
+h3, .h3{font-size: 25px}
+h4, .h4{font-size: 20px}
+h5, .h5{font-size: 16px}
+
+.mainmenu li a {
+    text-decoration: none;
+}
+.mainmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+}
+
+.mainmenu li {
+    display: inline-block;
+    position: relative;
+}
+
+.mainmenu li a {
+    display: block;
+    color: #333639;
+    font-weight: 700;
+    padding: 15px 20px;
+    border-radius: 3px;
+    font-size: 17px;
+}
+
+.screen-reader-text {
+    display: none;
+}
+.site-header {
+    padding: 20px 0;
+}
