@@ -1,0 +1,89 @@
+
+/*/blog css///*/
+
+
+.entry-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.entry-meta, .entry-footer {
+    font-size: 90%;
+}
+.entry-footer {
+    margin-top: 15px;
+}
+.stock-readmore-btn {
+    background: #1E8BC3;
+    color: #fff;
+    display: inline-block;
+    padding: 9px 24px;
+    margin-top: 3px;
+}
+article.page, article.post {
+    margin-bottom: 50px;
+}
+.entry-header h2 a {
+    color: #555;
+}
+.entry-footer span {
+    padding-right: 20px;
+}
+.stock-feature-content {
+    margin-bottom: 20px;
+}
+.widget h2 {
+    font-size: 24px;
+    color: #555;
+}
+.widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 2;
+}
+.widget a {
+    color: #555;
+}
+.widget {
+    margin-bottom: 40px;
+}
+.widget ul ul {
+    padding-left: 15px;
+}
+.widget ul ul ul {
+    padding-left: 5px;
+}
+.widget table {
+    width: 100%;
+}
+.widget table th, .widget table td {
+    padding: 4px;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.widget table {
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+.widget table th {
+    background: #ddd;
+}
+.widget.widget_rss li {
+    margin-bottom: 30px;
+}
+.widget.widget_rss .rssSummary {
+    font-size: 90%;
+    padding-top: 10px;
+}
+.widget.widget_rss cite {
+    padding-top: 10px;
+    display: inline-block;
+    font-weight: 700;
+}
+.widget.widget_rss .rsswidget {
+    font-size: 120%;
+}
+.widget.widget_rss .rss-date {
+    font-size: 80%;
+}
