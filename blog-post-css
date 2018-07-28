@@ -1,4 +1,4 @@
-
+ 
 /*/blog css///*/
 
 
@@ -86,4 +86,20 @@ article.page, article.post {
 }
 .widget.widget_rss .rss-date {
     font-size: 80%;
+}
+input.search-submit {
+    display: inline-block;
+}
+ input.search-field {
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+.search-results article.page .entry-summary {
+    display: none;
+}
+.nav-links a {
+    display: inline-block;
+    border: 1px solid #555;
+    color: #333;
+    padding: 5px 10px; 
 }
