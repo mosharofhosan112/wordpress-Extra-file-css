@@ -1,0 +1,57 @@
+ // video shortcode
+
+
+/**
+ * Gets a vimeo thumbnail url
+ * @param mixed $id A vimeo id (ie. 1185346)
+ * @return thumbnail's url
+*/
+function getVimeoThumb($id) {
+    $data = file_get_contents("http://vimeo.com/api/v2/video/$id.json");
+    $data = json_decode($data);
+    return $data[0]->thumbnail_large;
+}
+
+
+function crazyland_video_shortcode($atts, $content = null) {
+     
+      extract( shortcode_atts( array( 
+        'id' => '', 
+        'thumb_source' => '1', 
+        'video_thumb' => '', 
+        'thumb_source_size' => 'large', 
+
+    ), 
+      $atts) );
+
+      $idword = strlen($id);
+
+      if($idword == 11) {
+         $video_url = 'https://www.youtube.com/watch?v='.$id.'';
+         $source_url = 'https://img.youtube.com/vi/'.$id.'/hqdefault.jpg';
+
+      } else {
+        $video_url = 'https://vimeo.com/'.$id.'';
+        $source_url = getVimeoThumb($id);
+      }
+     
+
+     if($thumb_source == 2 && !empty($video_thumb)) {
+        $custom_source = wp_get_attachment_image_url($video_thumb, $thumb_source_size);
+     } else {
+        $custom_source = $source_url;
+     }
+  
+    $crazyland_video_markup = '
+      <div class="crazyland-video-wraper">
+          <a href="'.$video_url.'"><img src="'.$custom_source.'" alt=""> <span class="video-paly-btn mfp-iframe"><i class="fa fa-play"></i></span></a> 
+      </div>
+
+    ';
+ 
+  
+    return $crazyland_video_markup;
+
+}
+add_shortcode('crazyland_video', 'crazyland_video_shortcode');
+
